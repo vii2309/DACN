@@ -55,8 +55,8 @@ const Login: React.FC = () => {
         //     localStorage.setItem('EXP', exp);
         //     localStorage.setItem('UUID', uuid);
 
-            const redirect = location.search !== '' ? queryStringParse(location.search).redirect : '/';
-            return  router.replace(!redirect ? '' : redirect as string, {});
+            const redirect ='/admin'+ location.search !== '' ? queryStringParse(location.search).redirect : '/';
+            return  router.replace(!redirect ? '/admin' : redirect as string, {});
         // });
     };
     return (

@@ -54,9 +54,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({
 				{/* Inject MUI styles first to match with the prepend: true configuration. */}
 			</head>
 			<body className={roboto.className} suppressHydrationWarning={true}>
-				<App>
-					{children}
-				</App>
+				{children}
 			</body>
 		</html >
 	)
