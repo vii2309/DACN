@@ -1,14 +1,14 @@
 "use client"
-import React from 'react'
-import { Box, Button, Card, CardContent, Grid, Link, TextField, Typography } from "@mui/material";
-import dynamic from "next/dynamic";
-import { useRouter } from 'next/navigation';
+import { useNotificationContext } from '@/contexts/notification';
 import { LoginTypes } from '@/libs/types';
 import { loginValidator } from '@/libs/validators';
-import { useForm, Controller, SubmitHandler } from 'react-hook-form';
-import { vestResolver } from '@hookform/resolvers/vest';
 import { queryStringParse } from '@/utils/functions';
-import { useNotificationContext } from '@/contexts/notification';
+import { vestResolver } from '@hookform/resolvers/vest';
+import { Box, Button, Link, TextField, Typography } from "@mui/material";
+import dynamic from "next/dynamic";
+import { useRouter } from 'next/navigation';
+import React from 'react';
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 
 const SocialLogin = dynamic(() => import("@/components/SocialLogin"));
 
@@ -55,8 +55,8 @@ const Login: React.FC = () => {
         //     localStorage.setItem('EXP', exp);
         //     localStorage.setItem('UUID', uuid);
 
-        //     const redirect = location.search !== '' ? queryStringParse(location.search).redirect : '/';
-        //     return await router.replace(!redirect ? '' : redirect as string, {});
+            const redirect = location.search !== '' ? queryStringParse(location.search).redirect : '/';
+            return  router.replace(!redirect ? '' : redirect as string, {});
         // });
     };
     return (
